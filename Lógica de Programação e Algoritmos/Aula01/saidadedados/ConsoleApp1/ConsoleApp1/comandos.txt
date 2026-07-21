@@ -1,0 +1,67 @@
+
+
+using static System.Console;
+/*
+//Saida de dados
+BackgroundColor = ConsoleColor.White;
+BackgroundColor = ConsoleColor.Magenta;
+double numero  = 1.73598597;
+WriteLine($"Salario = R$ {numero:n}");
+Console.WriteLine("Hello, World!");
+Console.Write("SENAI");//SAIDA DE DADOS 
+WriteLine("clodoaldo");
+WriteLine("\t\t\tClodoaldo");
+Beep();
+Title = "aplicativo SENAI";
+string escola = "AMERICANA";
+WriteLine($"Escola: {escola}");
+ForegroundColor = ConsoleColor.Red;
+WriteLine('MESSI");
+ForegroundColor = ConsoleColor.Blue;
+WriteLine("MESSI");
+ResetColor();
+WriteLine("MESSI");
+ReadKey();  
+
+
+
+//Processamento de dados
+//Operadores aritméticos
+int a = 1 + 1; // Op soma 
+int b = 2 - 1; //Op sub
+int c = 3 * 1; //Op mult
+double d = 4 /  1; //Op divisão 
+double e = 2 * 2 * 2;
+double f = Math.Sqrt(4);//Raiz quadrada
+Math.Pow(2, 3); // Potencia 
+double k = 1 + (1 - (2 * 3)) / 4;
+double l = 2 % 2; //Módulo ou resto da divisão
+int y = 0;
+Console.WriteLine(y);   
+y = y + 1;
+Console.WriteLine(y);
+y++; //Incremento em um 
+Console 
+
+
+
+
+// Entrada de dados 
+Console.WriteLine("Digite seu nome: "); 
+string nome = Console.ReadLine(); //Entrada de dados 
+Console.WriteLine("Digite sua idade: ");
+int idade = int.Parse(Console.ReadLine));//Conversão de dados 
+Console.WriteLine("Digite seu salário: R$");
+double salario = double.Parse(Console.ReadLine());
+Console.WriteLine($"Nome: {nome}, Idade: {idade}, Salário: R${salario}"); 
+
+
+
+
+
+
+
+
+
+
+
