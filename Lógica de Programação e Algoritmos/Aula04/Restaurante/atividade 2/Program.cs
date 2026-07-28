@@ -29,13 +29,13 @@ catch
     Console.WriteLine("Valor inválido.");
 }
 
-// Funções para 
+// Função para calcular o perímetro
 double Perimetro(double a, double b, double c)
 {
     return a + b + c;
 }
 
-// 
+// Função para calcular a área do trapézio
 double Area(double a, double b, double c)
 {
     return ((a + b) * c) / 2.0;
