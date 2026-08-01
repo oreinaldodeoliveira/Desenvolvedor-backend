@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="Crescente/Crescente.csproj" Id="cc8173f4-0ac3-40bc-a1af-c321fe4ab729" />
+  <Project Path="Exercicioseuqenci/Exercicioseuqenci.csproj" Id="0846d65b-c593-490b-9e92-f9b9d7f5abe3" />
+  <Project Path="Lanchonete/Lanchonete.csproj" />
+  <Project Path="parOuImpar/parOuImpar.csproj" />
+  <Project Path="Parquedediversao/Parquedediversao.csproj" />
+  <Project Path="Senha/Senha.csproj" Id="43f34c49-bd86-446e-81fd-43a42f65f2a9" />
+  <Project Path="Tabuada/Tabuada.csproj" />
+</Solution>
