@@ -1,4 +1,4 @@
-﻿Dictionar<y<string, int> pessoas = new Dictionary<string , int>();
+﻿Dictionary<string, int> pessoas = new Dictionary<string , int>();
 int idade, n;
 
 try
