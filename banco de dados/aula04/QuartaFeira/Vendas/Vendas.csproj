@@ -12,4 +12,8 @@
     <Folder Include="Consulta\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="C:\Users\Back\Desktop\trabalho sneia.sql" Link="trabalho sneia.sql" />
+  </ItemGroup>
+
 </Project>
