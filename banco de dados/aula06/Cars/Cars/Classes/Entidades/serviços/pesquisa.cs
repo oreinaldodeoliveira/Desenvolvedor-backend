@@ -44,7 +44,6 @@ else if (moto)
         Valor = e.Valor.ToString("C"),
     }).ToList();
 }
-
     }
 }
 

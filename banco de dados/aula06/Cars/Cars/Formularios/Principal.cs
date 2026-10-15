@@ -1,13 +1,17 @@
 using Cars.Classes.Animation;
 using Cars.Classes.Contextos;
+using Cars.Classes.Services;
+using Cars.Classes.serviços;
 using Microsoft.IdentityModel.Tokens;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Cars;
 
 public partial class Principal : Form
 {
-    // Controlador que concentra toda a lógica de animação do panel1.
+    // Controlador que concentra toda a lógica de animação do painel.
     private readonly AnimationPanel animacaoPainel;
+    EstoqueContexto contexto = new EstoqueContexto();
 
     public Principal()
     {
@@ -18,18 +22,29 @@ public partial class Principal : Form
         animacaoPainel = new AnimationPanel(panel1);
 
         // Associa os botões de navegação ao método que fecha o painel.
-        button3.Click += FecharPanel_Click;
-        button4.Click += FecharPanel_Click;
-        button5.Click += FecharPanel_Click;
+        button3.Click += FecharPainel_Click;
+        button4.Click += FecharPainel_Click;
+        button5.Click += FecharPainel_Click;
     }
 
+    // Botão de comprar
     private void button2_Click(object? sender, EventArgs e)
     {
+        DataGridViewRow linhaselcionada = dataGridView1.SelectedRows[0];
+
+        textBox2.Text = linhaselcionada.Cells["Modelo"].Value.ToString();
+        textBox3.Text = linhaselcionada.Cells["Tipo"].Value.ToString();
+        textBox4.Text = linhaselcionada.Cells["Valor"].Value.ToString();
+        textBox5.Text = linhaselcionada.Cells["Quantidade"].Value.ToString();
+
+        string texto = linhaselcionada.Cells["Foto"].Value.ToString();
+        MessageBox.Show(texto);
+
         // Solicita à classe de animação que abra o painel ao clicar em Comprar.
         animacaoPainel.Abrir();
     }
 
-    private void FecharPanel_Click(object? sender, EventArgs e)
+    private void FecharPainel_Click(object? sender, EventArgs e)
     {
         // Solicita à classe de animação que feche o painel.
         animacaoPainel.Fechar();
@@ -37,53 +52,18 @@ public partial class Principal : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-
-        EstoqueContexto contexto = new EstoqueContexto();
-
-        bool moto = radioButton1.Checked;
-        bool carro = radioButton2.Checked;
+        bool moto = checkBox1.Checked;
+        bool carro = checkBox2.Checked;
         string texto = textBox1.Text;
 
-        if (moto.Equals(false) & carro.Equals(false))
-        {
-            if (texto.IsNullOrEmpty())
-            {
-                dataGridView1.DataSource = contexto.Estoque.Select(e => new
-                {
-                    e.Tipo,
-                    e.Modelo,
-                    e.Quantidade,
-                    Valor = e.Valor.ToString("C"),
-                }).ToList();
-            }
+        Pesquisa.Pesquisas(moto, carro, texto, dataGridView1);
+    }
 
-            else
-            {
-                dataGridView1.DataSource = contexto.Estoque.Select(e => new
-                {
-                    e.Tipo,
-                    e.Modelo,
-                    e.Quantidade,
-                    Valor = e.Valor.ToString("C"),
-                }).ToList();
-            }
-        }
-        else if (moto)
-        {
-            //Pesquisa por moto
-            dataGridView1.DataSource = contexto.Estoque.Where(e => e.Tipo == 1).Select(e => new
-            {
-                e.Tipo,
-                e.Modelo,
-                e.Quantidade,
-                Valor = e.Valor.ToString("C"),
-            }).ToList();
-        }
+    private void Principal_BindingContextChanged(object sender, EventArgs e)
+    {
+    }
 
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    {
     }
 }
-
-
-
-
-
